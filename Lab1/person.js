@@ -1,7 +1,7 @@
 class Person {
-    constructor(name, color) {
+    constructor(name, favoriteColor) {
         this.name = name;
-        this.color = color;
+        this.favoriteColor = favoriteColor;
     }
 
 speak() {

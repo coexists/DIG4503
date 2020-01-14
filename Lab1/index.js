@@ -1,5 +1,5 @@
 const Person = require("./person.js");
 
-let p = new Person("Test", "Blue");
+let p = new Person("Vicky", "Red");
 console.log(p.name);
-console.log(p.color);
+console.log(p.favoriteColor);
