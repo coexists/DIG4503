@@ -6,7 +6,7 @@ class Cat {
     }
 
     speak() {
-        
+        console.log("meow");
     }
 }
 module.exports = Cat;
