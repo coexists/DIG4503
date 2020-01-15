@@ -9,7 +9,7 @@ class Person {
     }
 
 speak() {
-    console.log(chalk.red("Vicky"));
+    return(chalk.red("Vicky"));
 }
 
 }
