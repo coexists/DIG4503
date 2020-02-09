@@ -5,10 +5,6 @@ const Chalk = require("Chalk");
 
 const pokemons = require("json-pokemon");
 const monArray = pokemons;
-//const getPokemons = require("json-pokemon/getPokemon");
-
-//const name = getPokemons.getPokemonByName();
-//const id = getPokemons.getPokemonById();
 
 
 App.get("/name/:name", (req,res) => {
