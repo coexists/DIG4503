@@ -1,7 +1,7 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
-const Chalk = require("Chalk");
+const chalk = require("Chalk");
 
 const pokemons = require("json-pokemon");
 const monArray = pokemons;
@@ -19,13 +19,13 @@ App.get("/name/:name", (req,res) => {
     });
 
     if (result.error) {
-        console.log(Chalk.red(req.path));
+        console.log(chalk.red(req.path));
     }
     else {
-        console.log(Chalk.green(req.path));
+        console.log(chalk.green(req.path));
         console.log(result);
     }
-    return result;
+    res.send(result);
 });
 
 App.get("/id/:id", (req, res) => {
@@ -40,14 +40,13 @@ App.get("/id/:id", (req, res) => {
     });
 
     if (result.error) {
-        console.log(Chalk.red(req.path));
-        console.log(result);
+        console.log(chalk.red(req.path));
     }
     else {
-        console.log(Chalk.green(req.path));
+        console.log(chalk.green(req.path));
         console.log(result);
     }
-    return result;
+    res.send(result);
 }); 
 
 App.listen(port,() => {
