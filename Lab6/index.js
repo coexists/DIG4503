@@ -10,33 +10,40 @@ App.use(cors());
 
 App.get("/", Express.static("client/build"));
 
-App.get("/id/:id", (req,res) => {
-    let result = {"error": "Invalid Pokemon ID!"};
-    coolPokemons.forEach((value) =>{
-        if(value.id == req.params.id){
+App.get("/id/:id", (req, res) => {
+    let result = {"error" : "Invalid ID!"};
+    let monId = req.params.id;
+
+    coolPokemons.forEach((value) => {
+        if(value.id == monId){
             result = value;
         }
     });
-    if(result.error){
+
+    if (result.error) {
         console.log(chalk.red(req.path));
     }
-    else{
+    else {
         console.log(chalk.green(req.path));
     }
     res.send(result);
-});
+}); 
 
 App.get("/name/:name", (req,res) => {
-    let result = {"error": "Invalid Pokemon Name!"};
-    coolPokemons.forEach((value) =>{
-        if(value.name.toLowerCase() == req.params.name){
-         result = value;
+     
+    let result = {"error" : "Invalid Name!"};
+    
+    let monName = req.params.name;
+    coolPokemons.forEach((value) => {
+        if(value.name.toLowerCase() == monName){
+            result = value;
         }
     });
-    if(result.error){
+
+    if (result.error) {
         console.log(chalk.red(req.path));
     }
-    else{
+    else {
         console.log(chalk.green(req.path));
     }
     res.send(result);

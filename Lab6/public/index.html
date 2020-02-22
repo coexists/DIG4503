@@ -1,58 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+ <html>
     <body>
         <script>
-            function idClick(event){
+            function idClick(event) {
                 event.preventDefault();
-                let pokeId = document.querySelector("#pokemonId");
+                let pokeId = document.querySelector("#monId");
 
                 fetch("/id/" + pokeId.value).then((res) => {
                     return res.json();
                 }).then((processed) =>{
-                    let pokeResponse = document.querySelector("#pokeResponse");
+                    let resPoke = document.querySelector("#resPoke");
 
-                    if(processed.error){
-                        pokeResponse.innerHTML = processed.error;                        
+                    if(processed.error) {
+                        resPoke.innerHTML = processed.error;                        
                     }
-                    else{
-                        pokeResponse.innerHTML = processed.name;
+                    else {
+                        resPoke.innerHTML = processed.name;
                     }
                 });
             }
 
-            function nameClick(event){
+            function nameClick(event) {
                 event.preventDefault();
-                let pokeName = document.querySelector("#pokemonName");
+                let pokeName = document.querySelector("#monName");
 
                 fetch("/name/" + pokeName.value).then((res) =>{
                     return res.json();
                 }).then((processed) => {
-                    let pokeResponse = document.querySelector("#pokeResponse");
-                    if(processed.error){
-                        pokeResponse.innerHTML = processed.error;
+                    let resPoke = document.querySelector("#resPoke");
+                    if(processed.error) {
+                        resPoke.innerHTML = processed.error;
                     }
                     else{
-                        pokeResponse.innerHTML = processed.name;
+                        resPoke.innerHTML = processed.name;
                     }
                 });
             }
         </script>
-
-        <form onsubmit = "idClick(event)">
-            <p>Enter Pokemon ID:</p>
-            <input id= "pokemonId" type="text">
-            <button>Submit</button>
-        </form>
-
-        <form onsubmit = "nameClick(event)">
-            <p>Enter Pokemon Name:</p>
-            <input id= "pokemonName" type="text">
-            <button>Submit</button>
-        </form>
-        <br>
-
-        <div id="pokeResponse"></div>
     </body>
-
 </html>
+

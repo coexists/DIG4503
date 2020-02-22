@@ -3,17 +3,17 @@ import React from "react";
 class IdSearch extends React.Component{
     readId(event){
         event.preventDefault();
-        let pokeId = document.querySelector("#pokemonId");
+        let pokeId = document.querySelector("#monId");
 
         fetch("http://localhost:80/id/" + pokeId.value).then((res)=>{
             return res.json();
         }).then((processed) =>{
-            let pokeResponse = document.querySelector("#reportingArea");
+            let resPoke = document.querySelector("#reportingArea");
             if(processed.error){
-                pokeResponse.innerHTML = processed.error;
+                resPoke.innerHTML = processed.error;
             }
             else{
-                pokeResponse.innerHTML = processed.name;
+                resPoke.innerHTML = processed.name;
             }
         });
     }
@@ -21,9 +21,10 @@ class IdSearch extends React.Component{
         return(
             <div>
                 <form onSubmit = {this.readId}>
-                <p>Enter Pokemon ID:</p>
-                <input id = "pokemonId" type = "text" />
-                <button>Submit</button>
+                <p>Type in a Pokemon ID!</p>
+                <input id = "monId" type = "text" />
+                <br />
+                <button>Submit that ID!</button>
                 </form>
             </div>
         );

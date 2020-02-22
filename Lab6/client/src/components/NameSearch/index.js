@@ -1,20 +1,20 @@
 import React from "react";
 
-class NameSearch extends React.Component {
+ class NameSearch extends React.Component {
 
     readName(event) {
         event.preventDefault();
-            let pokeName = document.querySelector("#pokemonName");
+            let pokeName = document.querySelector("#monName");
 
             fetch("http://localhost:80/name/" + pokeName.value).then((res) =>{
                 return res.json();
             }).then((processed) => {
-                let pokeResponse = document.querySelector("#reportingArea");
+                let resPoke = document.querySelector("#reportingArea");
                 if(processed.error){
-                    pokeResponse.innerHTML = processed.error;
+                    resPoke.innerHTML = processed.error;
                 }
                 else{
-                    pokeResponse.innerHTML = processed.name;
+                    resPoke.innerHTML = processed.name;
                 }
             });
         }
@@ -23,9 +23,10 @@ class NameSearch extends React.Component {
         return(
             <div>
                 <form onSubmit = {this.readName}>
-                <p>Enter Pokemon Name:</p>
-                <input id= "pokemonName" type="text" />
-                <button>Submit</button>
+                <p>Type in a Pokemon Name!</p>
+                <input id= "monName" type="text" />
+                <br />
+                <button>Submit that Name!</button>
                 </form>
             </div>
         );
