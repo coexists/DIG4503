@@ -1,33 +1,36 @@
 import React from "react";
 
-//class that extends
 class NameSearch extends React.Component {
-    readId(event) {
-        event.preventDefault();
-        let monName = document.querySelector("#monName");
 
-        fetch("http://localhost:80/id/" + monName.value).then((res)=> {
-            return res.json();
-        }).then((processed) => {
-            let monRes = document.querySelector("#reportingArea");
-            if(processed.error) {
-                monRes.innerHTML = processed.error;
-            }
-            else {
-                monRes.innerHTML = processed.name;
-                 }
-        });
-    }
+    readName(event) {
+        event.preventDefault();
+            let pokeName = document.querySelector("#pokemonName");
+
+            fetch("http://localhost:80/name/" + pokeName.value).then((res) =>{
+                return res.json();
+            }).then((processed) => {
+                let pokeResponse = document.querySelector("#reportingArea");
+                if(processed.error){
+                    pokeResponse.innerHTML = processed.error;
+                }
+                else{
+                    pokeResponse.innerHTML = processed.name;
+                }
+            });
+        }
+
     render() {
         return(
             <div>
-                <form onSubmit = {this.readId}>
-                <p>Enter Pokemon ID:</p>
-                <input id = "monName" type = "text" />
+                <form onSubmit = {this.readName}>
+                <p>Enter Pokemon Name:</p>
+                <input id= "pokemonName" type="text" />
                 <button>Submit</button>
                 </form>
             </div>
         );
     }
+
 }
+
 export default NameSearch;

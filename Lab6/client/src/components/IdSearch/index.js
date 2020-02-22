@@ -1,29 +1,28 @@
 import React from "react";
 
-//class that extends
-class IdSearch extends React.Component {
-    readId(event) {
+class IdSearch extends React.Component{
+    readId(event){
         event.preventDefault();
-        let monId = document.querySelector("#monId");
+        let pokeId = document.querySelector("#pokemonId");
 
-        fetch("http://localhost:80/id/" + monId.value).then((res)=> {
+        fetch("http://localhost:80/id/" + pokeId.value).then((res)=>{
             return res.json();
-        }).then((processed) => {
-            let monRes = document.querySelector("#reportingArea");
-            if(processed.error) {
-                monRes.innerHTML = processed.error;
+        }).then((processed) =>{
+            let pokeResponse = document.querySelector("#reportingArea");
+            if(processed.error){
+                pokeResponse.innerHTML = processed.error;
             }
-            else {
-                monRes.innerHTML = processed.name;
-                 }
+            else{
+                pokeResponse.innerHTML = processed.name;
+            }
         });
     }
-    render() {
+    render(){
         return(
             <div>
                 <form onSubmit = {this.readId}>
                 <p>Enter Pokemon ID:</p>
-                <input id = "monId" type = "text" />
+                <input id = "pokemonId" type = "text" />
                 <button>Submit</button>
                 </form>
             </div>
