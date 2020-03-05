@@ -1,0 +1,5 @@
+Username: victorialeon
+Password: bqHdsALi2P2p7fLG
+Connection URL: mongodb+srv://<username>:<password>@cluster0-tc9sb.mongodb.net/
+Database: DIG4503-78
+Collection: Movies
