@@ -27,6 +27,7 @@ class PokeName extends React.Component {
                         <title>Pokemon Name Search</title>
                     </Head>
                     </div>
+                    <div className={styles.list}>
                         <h1 className={styles.h1}>Pokemon Name Search</h1>
                             <div>
                             <Link href = "/index">
@@ -41,11 +42,13 @@ class PokeName extends React.Component {
                                     <a className={styles.a}>Type</a>
                                 </Link>
                             </div>
+                            
 
                 <p className={styles.p}>Search for Pokemon by Name</p>
                 <input type="text" id="pokeName"/>
                 <button onClick = {() => {this.getName()}}>Search</button>
                 <div className={styles.reporting} id="reportingArea"></div>
+            </div>
             </div>
         )
     }

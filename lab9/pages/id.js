@@ -28,6 +28,7 @@ class PokeId extends React.Component {
                         <title>Id Search</title>
                     </Head>
                     </div>
+                    <div className={styles.list}>
                         <h1 className={styles.h1}>Pokemon ID Search</h1>
                             <div>
                             <Link href = "/index">
@@ -42,11 +43,13 @@ class PokeId extends React.Component {
                                     <a className={styles.a}>Type</a>
                                 </Link>
                             </div>
+                            
 
                 <p className={styles.p}>Search for Pokemon by ID#</p>
                 <input type="text" id="pokeId"/>
                 <button onClick = {() => {this.getId()}}>Search</button>
                 <div className={styles.reporting} id="reportingArea"></div>
+                </div>
                 </div>
         )
     }

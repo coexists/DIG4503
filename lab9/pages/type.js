@@ -46,7 +46,8 @@ class App extends React.Component {
                         <title>Type</title>
                     </Head>
                     </div>
-                        <h1 className={styles.h1}>Pokemon Search</h1>
+                    <div className={styles.list}>
+                        <h1 className={styles.h1}>Pokemon Type Search</h1>
                             <div>
                             <Link href = "/index">
                                     <a className={styles.a}>Home</a>
@@ -60,12 +61,14 @@ class App extends React.Component {
                                     <a className={styles.a}>ID</a>
                                 </Link>
                             </div>
+                           
                 <br />
                 <div>
                 <p className={styles.p}>Search for Pokemon by type</p>
                     <TypeSearch callback={this.setResults} />
                     {this.createResults()}
                 </div>
+            </div>
             </div>
         );
     }

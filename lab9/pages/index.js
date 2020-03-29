@@ -10,6 +10,7 @@ const Home = () => {
                 <title>Homepage</title>
             </Head>
             </div>
+            <div className={styles.list}>
                 <h1 className={styles.h1}>Pokemon Search Tool</h1>
                     <div>
                         <Link href = "/name">
@@ -25,6 +26,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
+     </div>
   )
 }
 
