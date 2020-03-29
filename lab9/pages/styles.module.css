@@ -1,0 +1,36 @@
+.body {
+  background-color: rgb(255, 252, 239);
+  padding: 10px;
+}
+
+.table {
+  font-size: 1.2em;
+  padding: 10px;
+  font-family: comic sans MS;
+}
+
+.a {
+  font-size: 1.3em;
+  padding: 10px;
+  font-family: comic sans MS;
+}
+
+.h1 {
+  color: rgb(151, 7, 7);
+  margin-top: 20px;
+  font-family: comic sans MS, sans-serif;
+}
+
+.p {
+  color: rgb(0, 0, 0);
+  font-family: comic sans MS, sans-serif;
+  font-size: 1.2em;
+}
+
+.reporting {
+  color: rgb(35, 17, 196);
+  font-family: comic sans MS, sans-serif;
+  font-size: 2em;
+}
+
+
